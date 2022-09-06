@@ -1,5 +1,3 @@
-history of commands
-[hyeyeon@sjsu CS131]$ history
     1  passwd
     2  student
     3  passwd
@@ -49,7 +47,7 @@ history of commands
    47  history
    48  vi cmds.log
    49  git commit -m"first commit"
-   50  git remote add origin
+   50  git remote add origin 
    51  git push -u origin ws1
    52  git push -u origin
    53  git push -u origin main
@@ -71,7 +69,8 @@ history of commands
    69  git commit -m "first commit"
    70  git satus
    71  git status
-   72  git remote add origin    73  git remote add origin https://github.com//hyeyeonIm/CS131.git
+   72  git remote add origin 
+   73  git remote add origin https://github.com//hyeyeonIm/CS131.git
    74  git push -u origin main
    75  git pull origin master
    76  cd ..
@@ -100,7 +99,7 @@ history of commands
    99  git remote add origin https://github.com/hyeyeonIm/CS131.git
   100  git push -u origin ws1
   101  2~
-  102  git remote add
+  102  git remote add 
   103  git push -u origin ws1
   104  git push -u origin
   105  git push -u origin ws1
@@ -125,7 +124,8 @@ history of commands
   124  vi cmds.log
   125  git add cmds.log
   126  git commit -m "first commit"
-  127    128  git remote add origin git@github.com:hyeyeonIm/CS131.git
+  127  
+  128  git remote add origin git@github.com:hyeyeonIm/CS131.git
   129  git push -u origin ws1
   130  git config --global user.name
   131  git config --global user.email
@@ -143,9 +143,44 @@ history of commands
   143  git branch
   144  ls -al
   145  cat cmds.log
-  146    147
-  148  2~
-  149
-  150  ssh-keygen -t ed25519 -C [enhyeonii@gmail.com]
-  151  git push -u origin ws1
-  152  history
+  146  
+  147  2~
+  148  ssh-keygen -t ed25519 -C [enhyeonii@gmail.com]
+  149  git push -u origin ws1
+  150  history
+  151  vi cmds.log
+  152  git add cmds.log
+  153  git commit -m "first commit"
+  154  git remote origin https://github.com/hyeyeonIm/CS131.git
+  155  git push -u origin ws1
+  156  pwd
+  157  cd CS131
+  158  git checkout -b ws2
+  159  pwd
+  160  git init
+  161  git granch
+  162  git branch
+  163  wget    https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
+  164  gunzip amazon_reviews_us_Books_v1_02.tsv.gz 
+  165  ls -altrh amazon_reviews_us_Books_v1_02.tsv 
+  166  tail amazon_reviews_us_Books_v1_02.tsv 
+  167  grep -P 'tN/tY/t' amazon_reviews_us_Books_v1_02.tsv  | wc >"context.txt"
+  168  grep -P 'tY/tY/t' amazon_reviews_us_Books_v1_02.tsv  | wc >"context.txt"
+  169  vi "context.txt"
+  170  grep -P 'tN/tY/t' amazon_reviews_us_Books_v1_02.tsv  | wc 
+  171  grep -P 'tY/t' amazon_reviews_us_Books_v1_02.tsv  | wc 
+  172  grep -P 'tN/t' amazon_reviews_us_Books_v1_02.tsv  | wc 
+  173  grep -P '\tN\tY\t' amazon_reviews_us_Books_v1_02.tsv  | wc 
+  174  grep -P '\tY\tY\t' amazon_reviews_us_Books_v1_02.tsv  | wc 
+  175  grep -P '\tN\tY\t' amazon_reviews_us_Books_v1_02.tsv  | wc >"context.txt"
+  176  vi "context.txt"
+  177  grep -P '\tY\tY\t' amazon_reviews_us_Books_v1_02.tsv  | wc >"context.txt"
+  178  vi "context.txt"
+  179  grep -P '\tY\tY\t' amazon_reviews_us_Books_v1_02.tsv  | wc >>"context.txt"
+  180  vi "context.txt"
+  181  grep -P '\tY\tY\t' amazon_reviews_us_Books_v1_02.tsv  | wc >"context.txt"
+  182  vi "context.txt"
+  183  grep -P '\tN\tY\t' amazon_reviews_us_Books_v1_02.tsv  | wc >>"context.txt"
+  184  vi "context.txt"
+  185  git branch
+  186  history > cmds.log

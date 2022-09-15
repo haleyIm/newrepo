@@ -184,3 +184,623 @@
   184  vi "context.txt"
   185  git branch
   186  history > cmds.log
+  187  vi cmds.log
+  188  git add "context.txt"
+  189  git add cmds.log
+  190  git commit
+  191  reomte https://github.com/hyeyeonIm/CS131.git
+  192  git remote https://github.com/hyeyeonIm/CS131.git
+  193  git statue
+  194  git status
+  195  git remote https://github.com/hyeyeonIm/CS131.git
+  196  git push
+  197  git push origin master
+  198  git push -u origin ws2
+  199  git remote add origin https://github.com/hyeyeonIm/CS131.git
+  200  git push -u origin ws2
+  201  git branch
+  202  git push -u origin ws2
+  203  git statu
+  204  git status
+  205  git remote add origin https://github.com/hyeyeonIm/CS131.git
+  206  git push -u origin ws2
+  207  vi "context.txt"
+  208  vi cmds.log
+  209  git status
+  210  git config --global user.email
+  211  git config --global user.name
+  212  vi cmds.log
+  213  git config --list
+  214  git push -u origin
+  215  git push -u origin ws2
+  216  git status
+  217  git add "context.txt"
+  218  git commit -m "context"
+  219  git add cmds.log
+  220  git commit -m "history"
+  221  git remote add origin https://github.com/hyeyeonIm/CS131.git
+  222  git push -u origin ws2
+  223  git commit -m "ws2"
+  224  git add "context.txt"
+  225  git commit -m "context"
+  226  git commit --amend -m "ws2"
+  227  git push -u origin ws2
+  228  git status
+  229  -u uid
+  230  -g gid
+  231  etc/group
+  232  etc/passwd
+  233  mkdir -p CS131/A1
+  234  cd CS131/A1
+  235  pwd
+  236  cp  ~test/A1/downloaded_hashtags_extend.csv
+  237  cp --help
+  238  pwd
+  239  cp  /home/hyeyeon/CS131/A1/downloaded_hashtags_extend.csv
+  240  cp /home/test/A1/downloaded_hashtags_extend.csv .
+  241  cp /home/hyeyeon/A1/downloaded_hashtags_extend.csv .
+  242  ls
+  243  pwd
+  244  cd CS131
+  245  cs A1
+  246  ls
+  247  cd A1
+  248  /etc/passwd
+  249  id -u username
+  250  -g gid
+  251  ls
+  252  cd ~
+  253  pwd
+  254  id -u username
+  255  grou[; ; ; ; ; ; ; ; ]
+  256  group
+  257  /etc/passwd
+  258  passwd -r files hyeyeon
+  259  sudo passwd hyeyeon
+  260  sudo service sshd restart
+  261  etc/group
+  262  /etc/group
+  263  sudo passwd root
+  264  /etc/id -u username
+  265  id - u username
+  266  id -u username
+  267  id
+  268  group
+  269  ls
+  270  cd CS131
+  271  cd A1
+  272  ls
+  273  ls directory/proc
+  274  cd ..
+  275  ls
+  276  ls directory/proc
+  277  ls directory /proc/
+  278  cat /proc/cpuinfo
+  279  ls
+  280  find . -name "*mem*"
+  281  ls directory /proc/
+  282  pwd
+  283  ls directory /proc/ | grep "mem"
+  284  ls directory /proc/ | grep "meminfo"
+  285  grep "meminfo"
+  286  ls directory / proc
+  287  cd CS131
+  288  ls directory /proc/
+  289  head meminfo
+  290  head directory /proc/meminfo/
+  291  ls directory /proc/meminfo/
+  292  cat /proc/meminfo
+  293  head proc/meminfo
+  294  head meminfo
+  295  head /proc/meminfo
+  296  ls directory/proc/
+  297  ls directory /proc/
+  298  head /proc/meminfo
+  299  head /proc/cpuinfo
+  300  cd A1
+  301  cp /home/test/A1/downloaded_hashtags_extend.csv .
+  302  ls
+  303  ls -al
+  304  ls -a
+  305  ls -altrh downloaded_hashtags_extend.csv 
+  306  ls -al downloaded_hashtags_extend.csv 
+  307  wc downloaded_hashtags_extend.csv 
+  308  wc -l
+  309  wc -l downloaded_hashtags_extend.csv 
+  310  grep -i "great" downloaded_hashtags_extend.csv 
+  311  wc -w | grep -i "great" downloaded_hashtags_extend.csv 
+  312  grep -i "great
+  313  ;lk
+  314  q
+  315  dai"
+  316  grep -i "great" | wc -w
+  317  grep -i "great" | wc -w downloaded_hashtags_extend.csv 
+  318  wc -w downloaded_hashtags_extend.csv 
+  319  grep -i "great" | wc -w downloaded_hashtags_extend.csv 
+  320  grep "great"|wc -w downloaded_hashtags_extend.csv 
+  321  cat downloaded_hashtags_extend.csv | grep -i "great" | wc -w
+  322  grep -i "great" downloaded_hashtags_extend.csv | wc-w
+  323  grep -i "great" downloaded_hashtags_extend.csv | wc -w
+  324  file -bi downloaded_hashtags_extend.csv 
+  325  groups
+  326  id -u username
+  327  id -u hyeyeon
+  328  mkdir temp
+  329  cd temp
+  330  chmod 000 temp
+  331  cd ..
+  332  chmod 000 temp
+  333  cd temp
+  334  ls
+  335  ls -l
+  336  touch temp/test_file.txt
+  337  chmod g+x temp
+  338  cd temp
+  339  branch -d temp
+  340  rmdir temp
+  341  cd temp
+  342  cd CS131
+  343  cd A1
+  344  pwd
+  345  ls
+  346  grep -i "great" downloaded_hashtags_extend.csv 
+  347  grep -i "great" downloaded_hashtags_extend.csv |wc -w
+  348  cut -f 1 -d downloaded_hashtags_extend.csv |sort|uniq|wc -w
+  349  cut -f 1 downloaded_hashtags_extend.csv |sort|uniq|wc -w
+  350  cap downloaded_hashtags_extend.csv 
+  351  ls downloaded_hashtags_extend.csv 
+  352  cat downloaded_hashtags_extend.csv 
+  353  head downloaded_hashtags_extend.csv 
+  354  cd CS131
+  355  cd A1
+  356  ls
+  357  file downloaded_hashtags_extend.csv 
+  358  head downloaded_hashtags_extend.csv 
+  359  cut -f4 downloaded_hashtags_extend.csv 
+  360  cut -f4 downloaded_hashtags_extend.csv |sort|uniq
+  361  cut -f1 downloaded_hashtags_extend.csv |sort|uniq
+  362  cat downloaded_hashtags_extend.csv|awk -F, '{print $1}'
+  363  cat downloaded_hashtags_extend.csv|awk -F, '{print $1}'|sort|uniq
+  364  cat downloaded_hashtags_extend.csv|awk -F, '{print $1}'|sort|uniq|wc -w
+  365  cat downloaded_hashtags_extend.csv|awk -F, '{print $2}'|sort|uniq
+  366  cat downloaded_hashtags_extend.csv|awk -F, '{print $2}'|sort|uniq|wc -w
+  367  cut -d "," -f1 downloaded_hashtags_extend.csv |sort|uniq
+  368  cut -d "," -f4 downloaded_hashtags_extend.csv |sort|uniq
+  369  head downloaded_hashtags_extend.csv 
+  370  iconv -c -f utf-8 -t euc-kr downloaded_hashtags_extend.csv >out.file
+  371  ls
+  372  file -i out.file
+  373  head 
+  374  file -i downloaded_hashtags_extend.csv
+  375  head downloaded_hashtags_extend.csv
+  376  cd ..
+  377  cd ~
+  378  cd CS131
+  379  rm -r A1/
+  380  cd A1
+  381  cd CS131
+  382  mkdir temp
+  383  chmod 000 temp
+  384  cd temo
+  385  cd temp
+  386  ls
+  387  ls temp
+  388  ls -l temp
+  389  touch temp/test_file.txt
+  390  rmdir temp
+  391  cd temp
+  392  mkdir A1
+  393  cd A1
+  394  cd ~
+  395  pwd
+  396  cd CS131
+  397  cd A1
+  398  groups
+  399  id -u hyeyeon
+  400  mkdir tmep
+  401  chmod 000 temp
+  402  rmdir tmep
+  403  mkdir temp
+  404  chmod 000 temp
+  405  cd temp
+  406  ls temp
+  407  ls -l temp
+  408  touch temp/test_file.txt
+  409  cd ..
+  410  pwd
+  411  cd A1
+  412  mkdir temp2
+  413  mkdir temp3
+  414  mv temp2 temp3
+  415  cp temp2 temp3
+  416  ls directory /proc/
+  417  head /proc/meminfo
+  418  head /proc/cpuinfo
+  419  cp /home/test/A1/downloaded_hashtags_extend.csv .
+  420  ls
+  421  cp downloaded_hashtags_extend.csv A1
+  422  ls -altrh downloaded_hashtags_extend.csv
+  423  wc -l downloaded_hashtags_extend.csv
+  424  grep -i "great" downloaded_hashtags_extend.csv
+  425  grep -i "great" downloaded_hashtags_extend.csv|wc -w
+  426  file -i downloaded_hashtags_extend.csv
+  427  iconv -c -f utf-8 -t euc-kr downloaded_hashtags_extend.csv>out.file
+  428  file -i out.file
+  429  cut -d "," -f1 downloaded_hashtags_extend.csv|sort|uniq|wc -w
+  430  cut -d "," -f4 downloaded_hashtags_extend.csv|sort|uniq|wc -w
+  431  cut -d "," -f2 downloaded_hashtags_extend.csv|sort|uniq|wc -w
+  432  cd CS131
+  433  script a1.txt
+  434  ls a1.txt
+  435  cp a1.txt A1
+  436  cd A1
+  437  ls
+  438  vi a1.txt
+  439  git init
+  440  git add a1.txt
+  441  git commit -m "Assignment #1"
+  442  git branch
+  443  git checkout -b a1
+  444  git branch
+  445  git add a1.txt
+  446  git commit -m "Assignment #1"
+  447  git add a1.txt
+  448  staus
+  449  git branch
+  450  git add a1.txt
+  451  git commit -m "a1"
+  452  git remote https://github.com/hyeyeonIm/CS131.git
+  453  git push -u origin a1
+  454  git branch
+  455  status
+  456  staus
+  457  git remote https://github.com/hyeyeonIm/CS131.git
+  458  git status
+  459  ls
+  460  rmdir temp2
+  461  rmdir temp1
+  462  rmdir temp
+  463  git add a1.txt
+  464  git status
+  465  ls
+  466  git commit -m "a1"
+  467  git add a1.txt
+  468  git status
+  469  vi a1.txt
+  470  git branch
+  471  git add a1.txt
+  472  git status
+  473  cd A1
+  474  rmdir A1
+  475  vi A1
+  476  ls
+  477  rmdir temp3
+  478  rm -r temp3
+  479  ls
+  480  git add a1.txt
+  481  git status
+  482  cd CS131
+  483  cd A1
+  484  ls
+  485  vi a1.txt
+  486  git init
+  487  git branch
+  488  git add a1.txt
+  489  git status
+  490  git cd ..
+  491  git chechout -b master
+  492  git checkout
+  493  git branch
+  494  git checkout master
+  495  git branch
+  496  git status
+  497  git reset HEAD a1.txt
+  498  git status
+  499  git checkout -b A1
+  500  git branch
+  501  git add a1.txt
+  502  git status
+  503  ls
+  504  git add a1.txt
+  505  vi a1.txt
+  506  git init
+  507  git branh
+  508  git branch
+  509  git add "a1.txt"
+  510  git status
+  511  git commit -m "a1"
+  512  ls
+  513  git add a1.txt
+  514  git status
+  515  vi a1.txt
+  516  ls
+  517  git status
+  518  mv a1.txt A1
+  519  ls
+  520  cd ..
+  521  ls
+  522  git init
+  523  git branch
+  524  git branch -b a1
+  525  git branch
+  526  git checkout -b a1
+  527  git branch
+  528  git add a1.txt
+  529  git status
+  530  git commit -m "a1"
+  531  git remote https://github.com/hyeyeonIm/CS131.git
+  532  git push -u origin a1
+  533  git status
+  534  git branch
+  535  git branch -d a1
+  536  git granch
+  537  git init
+  538  git staus
+  539  git status
+  540  git branch
+  541  git branch master
+  542  git branch
+  543  git branch -d a1
+  544  cd ..
+  545  ls
+  546  cd CS131
+  547  ls
+  548  cs CS131
+  549  git init
+  550  vi a1.txt
+  551  cd CS131
+  552  cd A1
+  553  ls
+  554  cd ..
+  555  ls
+  556  vi a1.txt
+  557  cd A1
+  558  ls
+  559  vi a1.txt
+  560  rm a1.txt
+  561  ls
+  562  cd ..
+  563  ls
+  564  ls -l
+  565  grep -i "great" downloaded_hashtags_extend.csv
+  566  file -i downloaded_hashtags_extend.csv
+  567  iconv -c -f utf-8 -t euc-kr downloaded_hashtags_extend.csv>out.file
+  568  file -i
+  569  file -i downloaded_hashtags_extend.csv
+  570  cd CS131
+  571  ls
+  572  vi a1.txt
+  573  git init
+  574  git branch
+  575  git add a1.txt
+  576  git remote https://github.com/hyeyeonIm/CS131.git
+  577  gir push -u origin a1
+  578  git status
+  579  git push -u origin a1
+  580  git branch -d a1
+  581  ls
+  582  git branch
+  583  git master
+  584  git branch master
+  585  git checkout master
+  586  git branch
+  587  git branch -d a1
+  588  git branch
+  589  git checkout -b a1
+  590  git branch
+  591  git add a1.txt
+  592  git remote https://github.com/hyeyeonIm/CS131.git
+  593  git push -u origin a1
+  594  vi a1.txt
+  595  git chekout master
+  596  git branch
+  597  git checkout master
+  598  git branch
+  599  git branch -d a1
+  600  ls
+  601  vi a1.txt
+  602  git branch
+  603  git checkout -b a1
+  604  git add a1.txt
+  605  git status
+  606  git remote https://github.com/hyeyeonIm/CS131.git
+  607  git push -u origin a1
+  608  git remote https://github.com/hyeyeonIm/CS131.git
+  609  ls
+  610  git remote add origin https://github.com/hyeyeonIm/CS131.git
+  611  git add a1.txt
+  612  git commit -m "a1.txt"
+  613  git remote https://github.com/hyeyeonIm/CS131.git
+  614  git push -u origin a1
+  615  ls
+  616  cd A1
+  617  ls
+  618  script test.txt
+  619  vi test.txt
+  620  rm test.txt
+  621  ls
+  622  cd ..
+  623  ls
+  624  vi a1.txt
+  625  ls
+  626  cd CS131
+  627  ls
+  628  head amazon_reviews_us_Books_v1_02.tsv
+  629  cut -d -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c
+  630  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c
+  631  head amazon_reviews_us_Books_v1_02.tsv|cut -f 2,3|sort|uniq -c
+  632  tail amazon_reviews_us_Books_v1_02.tsv|cut -f 2,3|sort|uniq -c
+  633  head amazon_reviews_us_Books_v1_02.tsv|cut -f 2,3|sort|uniq -w 2 -c
+  634  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv |sort|uniq -w 2 -c
+  635  head amazon_reviews_us_Books_v1_02.tsv
+  636  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv |sort|uniq -w 3 -c
+  637  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv |sort|uniq -w 3 -c|sort
+  638  cd CS131
+  639  ls
+  640  head amazon_reviews_us_Books_v1_02.tsv
+  641  vi test.txt
+  642  cut -f1,2 test.txt|sort|uniq -w 1 -c
+  643  cut -f1,2 test.txt|sort|uniq -w 2 -c
+  644  cut -f1,2 test.txt|sort|uniq -c
+  645  vi test.txt
+  646  cut -f1,2 test.txt|sort|uniq -w 2 -c
+  647  cut -f1,2 test.txt|sort|uniq -w 1 -c
+  648  cut -f1,2 test.txt|sort -r|uniq -w 1 -c
+  649  cut -f2,1 test.txt|sort -r|uniq -w 1 -c
+  650  vi test.txt
+  651  cut -f2,1 test.txt|sort -r|uniq -w 1 -c
+  652  cut -f1,2 test.txt|sort -r|uniq -w 2 -c
+  653  cut -f 3 amazon_reviews_us_Books_v1_02.tsv | sort -r| uniq -c
+  654  head amazon_reviews_us_Books_v1_02.tsv|cut -f3| sort -r| uniq -c
+  655  tail amazon_reviews_us_Books_v1_02.tsv|cut -f3| sort -r| uniq -c
+  656  vi test.txt
+  657  cut -f1,2 test.txt|sort -r|uniq -c
+  658  cut -f1,2 test.txt|sort -r|uniq -w 2 -c
+  659  head amazon_reviews_us_Books_v1_02.tsv|cut -f2,3|sort -r|uniq -w 2 -c
+  660  tail amazon_reviews_us_Books_v1_02.tsv|cut -f2,3|sort -r|uniq -w 2 -c
+  661  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort -r| uniq -w 2 -c|head
+  662  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort -r| uniq -w 2 -c
+  663  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort| uniq -w 2 -c|sort -r
+  664  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -w 2 -c|sort -k1 -r1
+  665  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -w 2 -c|sort -k1 -r
+  666  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -w 4 
+  667  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -w4
+  668  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort -r | uniq -c
+  669  cut -f 2,3 amazon_reviews_us_Books_v1_02.tsv | sort | awk '!a[$2]++|uniq -c
+  670  ka
+  671  |
+  672  ]
+  673  cd CS131
+  674  ls
+  675  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv | sort |awk '!a[$1]++'|uniq -c
+  676  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv |sort|uniq|awk'{print $1}'|uniq -c|sort -r
+  677  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv |sort|uniq > reviewers.txt
+  678  cat reviewers.txt |sort|uniq|awk'{print $1}'|uniq -c|sort -r
+  679  cd CS131
+  680  cut -f 2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c|sort -r
+  681  ls
+  682  cut -f1,2 test.txt|sort|uniq +2 -c|sort -r
+  683  cut -f1,2 test.txt|sort|uniq -f1 -c|sort -r
+  684  cut -f1,2 test.txt|sort|uniq -s2 -c|sort -r
+  685  cut -f1,2 test.txt|sort|uniq -w2 -c|sort -r
+  686  vi test.txt
+  687  cut -f2,3 test.txt|sort|uniq -w2 -c|sort -r
+  688  cut -f2,3 test.txt|sort|uniq -s2-2 -c|sort -r
+  689  cut -f2,3 test.txt|sort|uniq -s2 -w2 -c|sort -r
+  690  cut -f2,3 test.txt|sort|uniq -f2 -c|sort -r
+  691  cut -f2,3 test.txt|sort|uniq -f1 -c|sort -r
+  692  cut -f2,3 test.txt|sort -k3|uniq -c|sort -r
+  693  cut -f2,3 test.txt|sort -k3,3|uniq -c|sort -r
+  694  cut -f2,3 test.txt|sort -u3|uniq -c|sort -r
+  695  cut -f2,3 test.txt|sort -u2|uniq -c|sort -r
+  696  cut -f2,3 test.txt|sort -u1|uniq -c|sort -r
+  697  cut -f2,3 test.txt|sort -t : -k 2n|uniq -c|sort -r
+  698  cut -f2,3 test.txt|sort -t : -k 3n|uniq -c|sort -r
+  699  cut -f2,3 test.txt|sort -u|uniq -c|sort -r
+  700  cut -f2,3 test.txt|sort -u2|uniq -c|sort -r
+  701  sort --help
+  702  cut -f2,3 test.txt|awk '!a[$2]++'|uniq -c
+  703  cut -f2,3 test.txt|awk '!a[$1,$2]++'|uniq -c
+  704  cut -f2,3 test.txt|awk '!a[$2]++'|uniq -c
+  705  cut -f2,3 test.txt|sort|awk '!a[$2]++'|uniq -c
+  706  cut -f2,3 test.txt|sort|awk '!a[$1]++'|uniq -c
+  707  cut -f2,3 test.txt|sort
+  708  cut -f2,3 test.txt|sort|awk '!a[$1]++'
+  709  cut -f2,3 test.txt|sort|awk '!a[$2]++'
+  710  cut -f2,3 test.txt|sort|awk '!a[$2,$1]++'
+  711  cut -f2,3 test.txt|sort -k2
+  712  cut -f2,3 test.txt|sort -k2|awk '!a[$2,$1]++'
+  713  cut -f2,3 test.txt|sort -k2|awk '!a[$2]++'
+  714  cut -f2,3 test.txt|sort -k2|uniq -c
+  715  cut -f2,3 test.txt|sort -k2|uniq -f2 -d
+  716  cut -f2,3 test.txt|sort -k2|uniq -f2
+  717  cut -f2,3 test.txt|sort -k2|uniq -f1
+  718  cut -f2,3 test.txt|sort -k2|uniq -f1 -c
+  719  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv|sort -k1|uniq -c
+  720  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv|sort -k1|uniq -d -c
+  721  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -w1 -c |sort -r
+  722  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -w 1 -c
+  723  head amazon_reviews_us_Books_v1_02.tsv
+  724  ls
+  725  rm reviewers.txt
+  726  vi test.txt
+  727  cut -f1,2 test.txt|sort|uniq -c
+  728  cut -f1,2 test.txt|sort|uniq -w1 -c
+  729  cut -f1,2 test.txt|sort|uniq -w2 -c
+  730  cut -f1,2 test.txt|sort|uniq -w10 -c
+  731  cut -f1,2 test.txt|sort|uniq -w2 -c
+  732  cut -f1,2 test.txt|sort|uniq -w5 -c
+  733  cut -f1,2 test.txt|sort|uniq -w4 -c
+  734  cut -f1,2 test.txt|sort|uniq -w3 -c
+  735  cut -f1,2 test.txt|sort|uniq -w2 -c
+  736  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -w 1 -c
+  737  cut -f3,4 amazon_reviews_us_Books_v1_02.tsv|sort -k2|uniq -f1 -c
+  738  cut -f3,4 amazon_reviews_us_Books_v1_02.tsv|sort -k2|uniq -f1 -c|sort -r
+  739  cd CS131
+  740  ls
+  741  tail amazon_reviews_us_Books_v1_02.tsv
+  742  head amazon_reviews_us_Books_v1_02.tsv
+  743  cut -f3,4 amazon_reviews_us_Books_v1_02.tsv|sort -k2|uniq -f1 -c
+  744  cut -f3,4 amazon_reviews_us_Books_v1_02.tsv|sort -k2|uniq -f1 -c>product.txt
+  745  sort -r product.txt
+  746  sort -k1 product.txt
+  747  sort -n product.txt
+  748  tail product.txt|sort -n
+  749  head product.txt|sort -n
+  750  sort -n product.txt>product.txt
+  751  tail product.txt
+  752  vi product.txt
+  753  sort -n product.txt>product.txt
+  754  sort -n product.txt
+  755  ls
+  756  rm product.txt
+  757  ls
+  758  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv | sort -k1| uniq -c
+  759  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv | sort -k1| uniq -w 1 -c
+  760  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv |sort| uniq -w 2 -c
+  761  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv |sort| uniq -w 3 -c
+  762  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv |sort| uniq -w 4 -c
+  763  cut -f1,2 test.txt|sort|uniq -w 3 -c
+  764  cut -f1,2 test.txt|sort|uniq -w 2 -c
+  765  vi test.txt
+  766  cut -f1,2 test.txt|sort|uniq -w 2 -c
+  767  cut -f1,2 test.txt|sort|uniq -w 3 -c
+  768  cut -f1,2 test.txt|sort|uniq -w 4 -c
+  769  vi test.txt
+  770  cut -f1,2 test.txt|sort|uniq -w 4 -c
+  771  cut -f1,2 test.txt|sort|uniq -w 5 -c
+  772  vi test.txt
+  773  cut -f1,2 test.txt|sort|uniq -w 5 -c
+  774  cut -f1,2 test.txt|sort|uniq -w 4 -c
+  775  cut -f1,2 test.txt|sort|uniq -w 3 -c
+  776  cut -f1,2 test.txt|sort|uniq -w 2 -c
+  777  cut -f1,2 test.txt|sort|uniq -w 1 -c
+  778  head amazon_reviews_us_Books_v1_02.tsv
+  779  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv | sort -k1| uniq -w8 -c
+  780  cut -f2,3 amazon_reviews_us_Books_v1_02.tsv | sort -k1| uniq -w8 -c > reviewers.txt
+  781  sort -n reviewer.txt
+  782  sort -n reviewers.txt
+  783  rm reviewers.txt
+  784  rm product.txt
+  785  ls
+  786  rm test.txt
+  787  script w3.txt
+  788  mv w3.txt ws3.txt
+  789  ls
+  790  vi ws3.txt
+  791  sort -n reviewers.txt > reviewers.txt
+  792  vi reviewers.txt
+  793  tail product.txt|sort -n
+  794  head product.txt|sort -n
+  795  sort -n product.txt|tail
+  796  ls
+  797  rm ws3.txt
+  798  rm product.txt
+  799  rm reviewers.txt
+  800  ls
+  801  script ws3.txt
+  802  vi ws3.txt
+  803  git init
+  804  git checkout -b ws3
+  805  git branch
+  806  history>cmds.log

@@ -1,0 +1,102 @@
+Script started on 2022-10-19 01:12:39-04:00
+
+>> Creat tmux
+]0;hyeyeon@sjsu:~/CS131[hyeyeon@sjsu CS131]$ tmux new-session -s homework
+[?1049h[22;0;0t[?1h=[H[2J[?12l[?25h[?1000l[?1002l[?1006l[?1005l[c(B[m[?12;25h[?12l[?25h[?1003l[?1006l[?2004l[1;1H[1;30r]112[1;1H[?25l[K
+[K
+[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 01:12 19-Oct-22(B[m[1;1H[?12l[?25h(B[m[?12;25h[?12l[?25h[?1003l[?1006l[?2004l[1;1H[1;30r[1;1H[?25l[K
+[K
+
+
+1) get a current datetime stamp in a variable DATETIME (as shown in the slides)
+
+[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 01:12 19-Oct-22(B[m[1;1H[?12l[?25h[hyeyeon@sjsu CS131]$ tmux attach -t homework
+sessions should be nested with care, unset $TMUX to force
+[hyeyeon@sjsu CS131]$ date "+%Y-%m-%d %I:%M:%S %p"
+2022-10-19 01:12:58 AM
+
+
+>> Check PROUCTS
+[hyeyeon@sjsu CS131]$ [?25l[30;1H[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 01:13 19-Oct-22(B[m[5;23H[?12l[?25h[?25l[30;1H[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 01:14 19-Oct-22(B[m[5;23H[?12l[?25hcd PRODUCTS
+[hyeyeon@sjsu PRODUCTS]$ ls
+047194128X.txt  0521314925.txt  0870210092.txt
+[hyeyeon@sjsu PRODUCTS]$ cd ..
+
+
+2) cp the file PRODUCTS/productID.txt to a file PRODUCTS/productID.DATETIME.txt
+
+[hyeyeon@sjsu CS131]$ cp PRODUCTS/047194128X.txt PRODUCTS/047194128X.20221019_011258.txt
+[hyeyeon@sjsu CS131]$ cp PRODUCTS/0521314925.txt PRODUCTS/0521314925.20221019_011258.txt
+[hyeyeon@sjsu CS131]$ cp PRODUCTS/0870210092.txt PRODUCTS/0870210092.20221019_011258.txt
+
+
+3) append a new row to the end of PRODUCTS/productID.DATETIME.txt as a new product review
+-> grep -n : grep productID
+-> cut -f8 : cut star_rating
+
+[hyeyeon@sjsu CS131]$ grep -n "047194128X" amazon_reviews_us_Books_v1_02.tsv | cut -f8 >> PRODUCTS/047194128X.20221019_0111258.txt
+[?25l[30d[30m[42m[homework]0:grep*                                                                "sjsu.pub.pic2.ibm.com" 01:15 19-Oct-22(B[m[14;1H[?12l[?25h[hyeyeon@sjsu CS131]$ [?25l[30;1H[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 01:15 19-Oct-22(B[m[14;23H[?12l[?25hgrep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f8 >> PRODUCTS/0521314925.20221019_0111258.txt
+[?25l[30d[30m[42m[homework]0:grep*                                                                "sjsu.pub.pic2.ibm.com" 01:15 19-Oct-22(B[m[16;1H[?12l[?25h[hyeyeon@sjsu CS131]$ [?25l[30;1H[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 01:15 19-Oct-22(B[m[16;23H[?12l[?25hgrep -n "0870210092" amazon_reviews_us_Books_v1_02.tsv | cut -f8 >> PRODUCTS/0870210092.20221019_0111258.txt
+
+
+
+4) create a symbolic link named PRODUCTS/productID.LATEST.txt that points to file PRODUCTS/productID.DATETIME.txt
+
+[?25l[30d[30m[42m[homework]0:grep*                                                                "sjsu.pub.pic2.ibm.com" 01:15 19-Oct-22(B[m[18;1H[?12l[?25h[hyeyeon@sjsu CS131]$ [?25l[30;1H[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 01:15 19-Oct-22(B[m[18;23H[?12l[?25hln -s PRODUCTS/047194128X.20221019_011258.txt PRODUCTS/047194128X.LATEST.txt
+[hyeyeon@sjsu CS131]$ ln -s PRODUCTS/0521314925.20221019_011258.txt PRODUCTS/0521314925.LATEST.txt
+[hyeyeon@sjsu CS131]$ ln -s PRODUCTS/0870210092.20221019_011258.txt PRODUCTS/0870210092.LATEST.txt
+
+
+5) Write a cron tab that once a minute checks the file PRODUCTS/productID.LATEST.txt
+
+[hyeyeon@sjsu CS131]$ crontab -e
+no crontab for hyeyeon - using an empty one
+[?25l[H[K
+[K[6A[?12l[?25h[1;29r[2;29r[28S[1;1H[K[29d"/tmp/crontab.Dcsgba"[1;30r[29;22H[?25l 0L, 0C[2;1H[34m[1m~                                                                                                                       [3;1H~                                                                                                                       [4;1H~                                                                                                                       [5;1H~                                                                                                                       [6;1H~                                                                                                                       [7;1H~                                                                                                                       [8;1H~                                                                                                                       [9;1H~                                                                                                                       [10;1H~                                                                                                                       [11;1H~                                                                                                                       [12;1H~                                                                                                                       [13;1H~                                                                                                                       [14;1H~                                                                                                                       [15;1H~                                                                                                                       [16;1H~                                                                                                                       [17;1H~                                                                                                                       [17;120H(B[m
+[34m[1m~                                                                                                                       [19;1H~                                                                                                                       [20;1H~                                                                                                                       [21;1H~                                                                                                                       [22;1H~                                                                                                                       [23;1H~                                                                                                                       [24;1H~                                                                                                                       [25;1H~                                                                                                                       [26;1H~                                                                                                                       [27;1H~                                                                                                                       [28;1H~                                                                                                                       [1;1H[?12l[?25h(B[m[?25l[30d[30m[42m[homework]0:crontab*                                                             "sjsu.pub.pic2.ibm.com" 01:15 19-Oct-22(B[m[1;1H[?12l[?25h[29d[37m[41m[1mE348: No string under cursor[H[?25l(B[m[29;3H[37m[41m[1m53: Nothing in register "(B[m[K[1m-- REPLACE --(B[m[K[HO[?12l[?25hDUCTS/047194128X.LATEST.txt
+
+
+>> Check
+* * * * * cat PRODUCTS/052[K1314925.LATEST.txt
+* * * * * cat PR[KODUCTS/0870210092.LATEST.txt[A[1;29Hi0471941[34m^Z[39m94128X.LATEST.txt[13G194128X.LATEST.txt[K[11Guuu491[HPR[H[?25l[30d[30m[42m[homework]0:crontab*                                                             "sjsu.pub.pic2.ibm.com" 01:16 19-Oct-22(B[m[1;1H[?12l[?25h*****TCUR[HP[H* * * * * cat PRODUCTS/047194128X.LATEST.txt[29;1H[K[1;44H[3;1H[29d:wq"/tmp/crontab.Dcsgba"[?25l 3L, 135C written[H[hyeyeon@sjsu CS131]$ tmux attach -t homework[K
+sessions should be nested with care, unset $TMUX to force[K
+[hyeyeon@sjsu CS131]$ date "+%Y-%m-%d %I:%M:%S %p"[K
+2022-10-19 01:12:58 AM[K
+[hyeyeon@sjsu CS131]$ cd PRODUCTS[K
+[hyeyeon@sjsu PRODUCTS]$ ls[K
+047194128X.txt  0521314925.txt  0870210092.txt[K
+[hyeyeon@sjsu PRODUCTS]$ cd ..[K
+[hyeyeon@sjsu CS131]$ cp PRODUCTS/047194128X.txt PRODUCTS/047194128X.20221019_011258.txt                               [K
+[hyeyeon@sjsu CS131]$ cp PRODUCTS/0521314925.txt PRODUCTS/0521314925.20221019_011258.txt                               [K
+[hyeyeon@sjsu CS131]$ cp PRODUCTS/0870210092.txt PRODUCTS/0870210092.20221019_011258.txt                               [K
+[hyeyeon@sjsu CS131]$ grep -n "047194128X" amazon_reviews_us_Books_v1_02.tsv | cut -f8 >> PRODUCTS/047194128X.20221019_011258.txt[K
+[hyeyeon@sjsu CS131]$ grep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f8 >> PRODUCTS/0521314925.20221019_011258.txt[K
+[hyeyeon@sjsu CS131]$ grep -n "0870210092" amazon_reviews_us_Books_v1_02.tsv | cut -f8 >> PRODUCTS/0870210092.20221019_011258.txt[K
+[hyeyeon@sjsu CS131]$ ln -s PRODUCTS/047194128X.20221019_011258.txt PRODUCTS/047194128X.LATEST.txt                     [K
+[hyeyeon@sjsu CS131]$ ln -s PRODUCTS/0521314925.20221019_011258.txt PRODUCTS/0521314925.LATEST.txt                     [K
+[hyeyeon@sjsu CS131]$ ln -s PRODUCTS/0870210092.20221019_011258.txt PRODUCTS/0870210092.LATEST.txt                     [K
+[hyeyeon@sjsu CS131]$ crontab -e[K
+no crontab for hyeyeon - using an empty one[K
+[K[6A[?12l[?25hcrontab: installing new crontab
+[hyeyeon@sjsu CS131]$ [?25l[30;1H[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 01:16 19-Oct-22(B[m[24;23H[?12l[?25hcrontab -l
+* * * * * cat PRODUCTS/047194128X.LATEST.txt
+* * * * * cat PRODUCTS/0521314925.LATEST.txt
+* * * * * cat PRODUCTS/0870210092.LATEST.txt
+
+
+>> Outputs the mean (average) rating_score for this product to a file PRODUCTS/productID.AVGRATING.txt
+
+[1;30r[29;1H[hyeyeon@sjsu PRODUCTS]$ for i in '047194128X.20221019_011258.txt' ; do count=0[1;29r[29;120H
+[28;80H; total=0; for i in $( awk '{ print $1; }'' [1;30r[29;3H $i );do total=$(echo $total+$i | bc ); ((count++)); done; echo "scale=2; $tota[1;29r[29;120H
+[28;82Hl / $count" | bc ; done  [1;30r[29;1H[1;29r[29;120H
+[28;1H4.00[1;30r[29;1H[hyeyeon@sjsu PRODUCTS]$ for i in '0521314925.20221019_011258.txt' ; do count=0; total=0[1;29r[29;120H
+[28;89H; for i in $( awk '{ print $1; }''  [1;30r[29;4H$i );do total=$(echo $total+$i | bc ); ((count++)); done; echo "scale=2;[1;29r[29;120H
+[28;76H $total / $count" | bc ; done  [1;30r[29;1H[1;29r[29;120H
+[28;1H7.00[1;30r[29;1H[hyeyeon@sjsu PRODUCTS]$ for i in '0870210092.202[1;29r[29;120H
+[28;50H21019_011258.txt' ; do count=0; total=0; for i in $( awk '{ print $1; }''  $i );do total=[1;30r[29;18H$(echo $total+$i | bc ); ((count++)); done; echo "scale=2; $total[1;29r[29;120H
+[28;83H / $count" | bc ; done[1;30r[29;1H[1;29r[29;120H
+[28;1H9.50[1;30r[29;1H[hyeyeon@sjsu PRODUCTS]$ [1;29r[29;120H
+[28;26Hlogout[1;30r[29;1H[1;30r(B[m[?1l>[H[2J]112[?12l[?25h[?1000l[?1002l[?1006l[?1005l[?1049l[23;0;0t[exited]
+]0;hyeyeon@sjsu:~/CS131[hyeyeon@sjsu CS131]$ exit
+
+Script done on 2022-10-19 01:16:56-04:00

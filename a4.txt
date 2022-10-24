@@ -1,0 +1,126 @@
+Script started on 2022-10-23 21:43:00-04:00
+
+
+> Create tmux
+]0;hyeyeon@sjsu:~/CS131[hyeyeon@sjsu CS131]$ 
+]0;hyeyeon@sjsu:~/CS131[hyeyeon@sjsu CS131]$ tmux new-session -s homework
+[?1049h[22;0;0t[?1h=[H[2J[?12l[?25h[?1000l[?1002l[?1006l[?1005l[c(B[m[?12;25h[?12l[?25h[?1003l[?1006l[?2004l[1;1H[1;30r]112[1;1H[?25l[K
+[K
+[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 21:43 23-Oct-22(B[m[1;1H[?12l[?25h(B[m[?12;25h[?12l[?25h[?1003l[?1006l[?2004l[1;1H[1;30r[1;1H[?25l[K
+[K
+[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 21:43 23-Oct-22(B[m[1;1H[?12l[?25h[hyeyeon@sjsu CS131]$ tmux attach -t homework
+sessions should be nested with care, unset $TMUX to force
+
+
+0. Find the top 10 users who got retweeted the most from other users (for this you need both files, use fgrep)
+
+[hyeyeon@sjsu CS131]$ grep retweeted downloaded_tweets_extend_nolf2.tsv | awk -F'\t' '{print $5}' | sed 's/^.* id=//g' |  sed 's/ type=retweeted.//g' > retweets.txt
+[hyeyeon@sjsu CS131]$ fgrep -f retweets.txt downloaded_tweets_extend_original_nolf2.tsv | awk -F'\t' '{print $2}' > userss_retweeted.txt
+[hyeyeon@sjsu CS131]$ sort users_retweeted.txt | uniq -c | sort -n | tail -10
+    159 1290232189615894531
+    178 380648579
+    179 1229752606714728454
+    189 42836999
+    250 1219232377605644289
+    254 1231514832479948802
+    274 1495480590572961792
+    276 163018653
+    387 1891490382
+    527 18831926
+
+
+1. Represent influence between users as a directional graph of users, save as a list of lines
+-> 1st column : A, 2nd column: B
+
+[hyeyeon@sjsu CS131]$ fgrep -f retweets.txt downloaded_tweets_extend_original_nolf2.tsv |awk -F'\t' '{print $2,$1}' > a4__retweets.csv
+
+
+2. Produce clusters (groups of influence) by ranking the users who got retweets by their number of retweets
+
+[hyeyeon@sjsu CS131]$ cat users_retweeted.txt | uniq -c | sort -k 1n | awk '{ if ($1 >= 3) {print} }' > a4_data.csv
+
+
+3. Use gnuplot
+Plot the sizes of clusters as a histogram to show how many clusters of each size resulted
+
+[hyeyeon@sjsu CS131]$ /etc/gnuplot-5.4.4/src/gnuplot
+[1;29r[3S[20;9HG N U P L O T[21;9HVersion 5.4 patchlevel 4    last modified 2022-07-10 [23;9HCopyright (C) 1986-1993, 1998, 2004, 2007-2022[24;9HThomas Williams, Colin Kelley and many others[26;9Hgnuplot home:     http://www.gnuplot.info[27;9Hfaq, bugs, etc:   type "help FAQ"[28;9Himmediate help:   type "help"  (plot window: hit 'h')[1;30r[29;1H[1;29r[2S[28;1HTerminal type is now 'unknown'[1;30r[29;1Hgnuplot> [?25l
+[30m[42m[homework]0:gnuplot*                                                             "sjsu.pub.pic2.ibm.com" 21:43 23-Oct-22(B[m[29;10H[?12l[?25hset terminal svg[1;29r[29;120H
+[1;30r[29;1H[1;29r[2S[28;1HTerminal type is now 'svg'[1;30r[29;1H[1;29r[29;120H
+[28;1HOptions are 'size 600,480 fixed enhanced font 'Arial,12' butt dashlength 1.0 '[1;30r[29;1Hgnuplot> set output "a4.svg"[1;29r[29;120H
+[1;30r[29;1Hgnuplot> plot "[1;29r[29;120H
+[28;16Ha4_data.csv"[1;30r[29;1Hgnuplot> [1;29r[29;120H
+gnuplot> [1;30r[29;10H[?25l
+[30m[42m[homework]0:gnuplot*                                                             "sjsu.pub.pic2.ibm.com" 21:44 23-Oct-22(B[m[29;10H[?12l[?25h[1;29r[29;120H
+[1;30r[29;1H[1;29r[29;120H
+[28;1H[1]+  Stopped                 /etc/gnuplot-5.4.4/src/gnuplot[?25l[1;30r[30;1H[30m[42m[homework]0:bash*                                                                "sjsu.pub.pic2.ibm.com" 21:44 23-Oct-22(B[m[29;1H
+
+
+4. 
+   1) Find the 30 most frequent hashtags in these largest clusters of replies you kept (for the users/tweets that got replied to, not the users/tweets doing the replies)
+-> largest clusters of replies(author) : 741190491195248642
+-> cut –f4 : 4th row only
+-> sort : Sort
+-> uniq -c : Output duplicate count
+-> sort –n : Sort by number
+-> tail –30 : View only the last 30 data
+
+[?12l[?25h[hyeyeon@sjsu CS131]$ grep "741190491195248642" downloaded_tweets_extend_original_nolf2.tsv|cut -f4|sort|uniq -c|sor[1;29r[29;120H
+[28;117Ht -n||ta[1;30r[29;4Hil -30 > a4_hashtag.tx[1;29r[29;120H
+
+
+   2) Compare to the 30 most frequent hashtags you found in assignment #2 (overall, question 5). 
+Which hashtags appear in these clusters that did not appear in the frequent hashtags from assignment #2?
+-> Check a2_hashtag
+
+[28;26Ht[1;30r[29;1H[hyeyeon@sjsu CS131]$ head a2_hashtag.txt[1;29r[29;120H
+[1;30r[29;1H[1;29r[4S[25;1H     72 CovidIsNotOver
+     74 longcovid
+     79 DemVoice1
+     79 Partygate[1;30r[29;1H[1;29r[29;120H
+[28;1H     82 Mariupol
+     82 "เจจ้าแกก้มกก้อน[5S[5A,fluke_natouch"
+     84 RepublicanTTTTTTPredators
+     84 "Ukraine,Russia"
+     88 ChefsForUkraine
+
+-> Compare
+     88 Kyiv[1;30r[29;1H[hyeyeon@sjsu CS131]$ diff a4_hashtag.txt a2_hashtag.txt[1;29r[29;120H
+[1;30r[29;1H[1;29r[8S[21;1H1c1,30
+<       1 "MelanieShaw,Windrush"
+---
+>      72 CovidIsNotOver
+>      74 longcovid
+>      79 DemVoice1
+>      79 Partygate
+>      82 Mariupol
+>      82 "เจจ้าแกก้มกก้อน[2S[2A,fluke_natouch"
+>      84 RepublicanTTTTTTPredators[1;30r[29;1H[1;29r[23S[6;1H>      84 "Ukraine,Russia"
+>      88 ChefsForUkraine
+>      88 Kyiv
+>      89 bcpoli
+>      89 COVID
+>      91 Brexit
+>      98 SOTU
+>     107 insiders
+>     110 COVIDisAirborne
+>     116 OneOfUsAllOfUs
+>     118 onpoli
+>     123 Omicron
+>     139 "Russia,Ukraine"
+>     173 Russia
+>     175 cdnpoli
+>     181 ableg
+>     247 BREAKING
+>     267 PMQs
+>     310 StandWithUkraine
+>     571 COVID19
+>     721 auspol
+>     734 LongCovid
+>     969 Ukraine[1;30r[29;1H[hyeyeon@sjsu CS131]$ [1;29r[2S[27;23Hlogout
+There are stopped jobs.[1;30r[29;1H[hyeyeon@sjsu CS131]$ [1;29r[29;120H
+[28;23Hlogout[1;30r[29;1H[1;30r(B[m[?1l>[H[2J]112[?12l[?25h[?1000l[?1002l[?1006l[?1005l[?1049l[23;0;0t[exited]
+]0;hyeyeon@sjsu:~/CS131[hyeyeon@sjsu CS131]$ head a4.txt
+]0;hyeyeon@sjsu:~/CS131[hyeyeon@sjsu CS131]$ exit
+
+Script done on 2022-10-23 21:44:47-04:00

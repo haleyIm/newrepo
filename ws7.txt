@@ -1,0 +1,82 @@
+>> Use tmux
+Script started on 2022-10-26 00:40:55-04:00
+]0;hyeyeon@sjsu:~/CS131[hyeyeon@sjsu CS131]$ tmux new-session -s homework
+[?1049h[22;0;0t[?1h=[H[2J[?12l[?25h[?1000l[?1002l[?1006l[?1005l[c(B[m[?12;25h[?12l[?25h[?1003l[?1006l[?2004l[1;1H[1;42r]112[1;1H[?25l[K
+[K
+[K
+[30m[42m[homework]0:bash*                                                                                                      "sjsu.pub.pic2.ibm.com" 00:41 26-Oct-22(B[m[1;1H[?12l[?25h(B[m[?12;25h[?12l[?25h[?1003l[?1006l[?2004l[1;1H[1;42r[1;1H[?25l[K
+[K
+[K
+[30m[42m[homework]0:bash*                                                                                                      "sjsu.pub.pic2.ibm.com" 00:41 26-Oct-22(B[m[1;1H[?12l[?25h[hyeyeon@sjsu CS131]$ 
+
+1. Select your favorite product. You can work with the one product file you used in the last worksheet #6
+
+[hyeyeon@sjsu CS131]$ 
+[hyeyeon@sjsu CS131]$ cd PRODUCTS
+[hyeyeon@sjsu PRODUCTS]$ ls -atrl[K[Klr
+total 28
+-rw-rw-r-- 1 hyeyeon hyeyeon    2 Sep 27 20:45 0521314925.txt
+-rw-rw-r-- 1 hyeyeon hyeyeon    2 Oct 18 01:23 047194128X.txt
+-rw-rw-r-- 1 hyeyeon hyeyeon    6 Oct 18 01:23 0870210092.txt
+-rw-rw-r-- 1 hyeyeon hyeyeon    4 Oct 19 01:15 047194128X.20221019_011258.txt
+-rw-rw-r-- 1 hyeyeon hyeyeon    4 Oct 19 01:15 0521314925.20221019_011258.txt
+-rw-rw-r-- 1 hyeyeon hyeyeon   10 Oct 19 01:15 0870210092.20221019_011258.txt
+lrwxrwxrwx 1 hyeyeon hyeyeon   39 Oct 19 01:15 [31m[40m[1m047194128X.LATEST.txt(B[m -> [37m[41m[1m[5mPRODUCTS/047194128X.20221019_011258.txt
+(B[mlrwxrwxrwx 1 hyeyeon hyeyeon   39 Oct 19 01:15 [31m[40m[1m0521314925.LATEST.txt(B[m -> [37m[41m[1m[5mPRODUCTS/0521314925.20221019_011258.txt
+(B[mlrwxrwxrwx 1 hyeyeon hyeyeon   39 Oct 19 01:15 [31m[40m[1m0870210092.LATEST.txt(B[m -> [37m[41m[1m[5mPRODUCTS/0870210092.20221019_011258.txt
+(B[mdrwxrwxr-x 2 hyeyeon hyeyeon  273 Oct 19 01:15 [34m[1m.
+(B[mdrwxrwxr-x 8 hyeyeon hyeyeon 4096 Oct 26 00:40 [34m[1m..
+
+-> choose 0521314925
+
+(B[m[hyeyeon@sjsu PRODUCTS]$ cd ..
+
+
+1. Examine the review_body column in the amazon reviews file for a product of your choice
+
+[hyeyeon@sjsu CS131]$ grep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f4,14
+0521314925[6CThis is a beautiful book.  French talks about energy, form, mechanism, and economy in natural and man-made things.  He compares birds to planes in terms of fuel-capacity, energy  conversion efficiency, drag, etc.  He compares suspension   bridges and dinosaurs.  He provides examples of neat   inventions and the thought that has gone into them (every-  thing from steam-catapults to toy cars to grommets).  This  is &quot;How Things Work&quot; for the non-moron crowd.
+
+
+2. Remove all commas, dots, semicolons, and these stopwords:  and or if in it
+-> ^ : first of row
+-> $ : last of row
+-> * : find characters more than 0 at frong
+-> sed -r 's/\s+//g' : remove empty spaces
+-> Remove all commas, dots, semicolons, - / &
+
+[hyeyeon@sjsu CS131]$ [?25l[42;1H[30m[42m[homework]0:bash*                                                                                                      "sjsu.pub.pic2.ibm.com" 00:42 26-Oct-22(B[m[23;23H[?12l[?25hgrep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f4,14 | sed 's/\,//g' | sed 's/\.//g' | sed 's/\;//g' | sed 's/\-//g' | sedd 's/\&//g' | sed -r 's/\s+//g'
+0521314925ThisisabeautifulbookFrenchtalksaboutenergyformmechanismandeconomyinnaturalandmanmadethingsHecomparesbirdstoplanesintermsoffuelcapacityenergyconversionefficiencydragetcHecomparessuspensionbridgesanddinosaursHeprovidesexamplesofneatinventionsandthethoughtthathasgoneintothem(everythingfromsteamcatapultstotoycarstogrommets)ThisisquotHowThingsWorkquotforthenonmoroncrowd
+[hyeyeon@sjsu CS131]$ grep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f4,14  | sed 's/\,//g' | sed 's/\.//g' | sed 's/\;//g' | sed 's/\-//g' | seed 's/\&//g' | sed -r 's/\s+//g' | sed 's/[imemymyselfweouroursourselvesyouyouryoursyourselfyourselveshehimhishimselfsheherhersherselfititsitselftheythemtheirttheirs]//g' 
+0521314925TababkFncakabngcanandcnnnaaandanadngHcpabdpanncapacngcnncncdagcHcpapnnbdganddnaHpdxapnannnandgaagnn(ngacaapcag)TqHTngWkqnnncd
+
+
+3. Remove all html tags, such as <br />
+-> Not html tags in this sentance
+
+
+4. Keep only the review_body column and output to a new file
+
+[hyeyeon@sjsu CS131]$ [?25l[42;1H[30m[42m[homework]0:bash*                                                                                                      "sjsu.pub.pic2.ibm.com" 00:43 26-Oct-22(B[m[32;23H[?12l[?25hgrep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f14  | sed 's/\,//g' | sed 's/\.//g' | sed 's/\;//g' | sed 's/\-//g' | sed  's/\&//g' | sed -r 's/\s+//g' | sed 's/[imemymyselfweouroursourselvesyouyouryoursyourselfyourselveshehimhishimselfsheherhersherselfititsitselftheythemtheirtheeirs]//g' > review_body.txt
+[?25l[42d[30m[42m[homework]0:grep*                                                                                                      "sjsu.pub.pic2.ibm.com" 00:43 26-Oct-22(B[m[35;1H[?12l[?25h[hyeyeon@sjsu CS131]$ [?25l[42;1H[30m[42m[homework]0:bash*                                                                                                      "sjsu.pub.pic2.ibm.com" 00:43 26-Oct-22(B[m[35;23H[?12l[?25h[?25l[42;1H[30m[42m[homework]0:bash*                                                                                                      "sjsu.pub.pic2.ibm.com" 00:44 26-Oct-22(B[m[35;23H[?12l[?25hcat review.[K_[K[K[K[K[Kr[K[K[Kreview_body.txt
+TababkFncakabngcanandcnnnaaandanadngHcpabdpanncapacngcnncncdagcHcpapnnbdganddnaHpdxapnannnandgaagnn(ngacaapcag)TqHTngWkqnnncd
+
+
+5. Save the history of your commands in file "cmds.log" with "history > cmds.log"
+
+[hyeyeon@sjsu CS131]$ history > cmds.log
+[hyeyeon@sjsu CS131]$ hea[K[K[Ktia[K[Kail cmds.log
+[1;41r[12S[27;1H  968  grep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f4,14 | sed -r 's/\s+//g'
+  969  cd PRODUCTS
+  970  ls -atlr
+  971  cd ..
+  972  grep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f4,14
+  973  grep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f4,14 | sed 's/\,//g' | sed 's/\.//g' | sed 's/\;//g' | sed 's/\-//g' | sed 's/\&//g' | sed -r 's/\s+//g'
+  974  grep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f4,14  | sed 's/\,//g' | sed 's/\.//g' | sed 's/\;//g' | sed 's/\-//g' | sed 's/\&//g' | sed -r 's/\s+//g' | sed 's/[imemymyselfweouroursourselvesyouyouryoursyourselfyourselveshehimhishimselfsheherhersherselfititsitselftheythemtheirtheirs]//g' 
+  975  grep -n "0521314925" amazon_reviews_us_Books_v1_02.tsv | cut -f14  | sed 's/\,//g' | sed 's/\.//g' | sed 's/\;//g' | sed 's/\-//g' | sed 's/\&//g' | sed -r 's/\s+//g' | sed 's/[imemymyselfweouroursourselvesyouyouryoursyourselfyourselveshehimhishimselfsheherhersherselfititsitselftheythemtheirtheirs]//g' > review_body.txt
+  976  cat review_body.txt
+  977  history > cmds.log[1;42r[41;1H[hyeyeon@sjsu CS131]$ [1;41r[41;158H
+[40;23Hlogout[1;42r[41;1H[1;42r(B[m[?1l>[H[2J]112[?12l[?25h[?1000l[?1002l[?1006l[?1005l[?1049l[23;0;0t[exited]
+]0;hyeyeon@sjsu:~/CS131[hyeyeon@sjsu CS131]$ exit
+
+Script done on 2022-10-26 00:45:04-04:00
